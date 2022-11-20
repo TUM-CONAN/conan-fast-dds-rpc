@@ -5,7 +5,7 @@ class FastDDSConan(ConanFile):
     name = "Fast-DDS-RPC"
     version = "1.0.0"
     license = "Apache License 2.0"
-    author = "Frieder Pankratz"
+    author = "Frieder Pankratz / Ulrich Eck"
     url = "https://github.com/TUM-CONAN/conan-fast-dds-rpc.git"
     description = "Conan wrapper for Fast-DDS-RPC"    
     settings = "os", "compiler", "build_type", "arch"
@@ -13,7 +13,10 @@ class FastDDSConan(ConanFile):
     default_options = {"shared": True, "Build_Java" : False } #, "RPCProto" : "rpcdds"}
     generators = "cmake"
 
-    requires = ("Fast-DDS/2.0.0@camposs/stable","Boost/1.72.0@camposs/stable" )
+    requires = (
+        "Fast-DDS/2.8.1@camposs/stable",
+        "Boost/1.79.0@camposs/stable" 
+        )
     
 
     def source(self):
